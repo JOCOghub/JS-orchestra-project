@@ -1,9 +1,5 @@
-class OrchestraSerializer
+class InstrumentSerializer
     include FastJsonapi::ObjectSerializer
-    attributes :name
-    attribute :instruments do |orchestra|
-      InstrumentSerializer.new(orchestra.instruments).as_json["data"]
-    end
-    # has_many :instruments
+    attributes :content, :orchestra_id
+    # belongs_to :orchestra
   end
-  
