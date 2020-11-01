@@ -5,7 +5,7 @@ class InstrumentsController < ApplicationController
       if instrument.save
         render json: InstrumentSerializer.new(instrument)
       else
-          render json: {message: instrument.errors.full_messages}
+        render json: {message: instrument.errors.full_messages}
       end
     end
   
