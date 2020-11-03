@@ -9,6 +9,12 @@ class InstrumentsController < ApplicationController
       end
     end
   
+    def destroy
+      instrument = Instrument.find_by(id: params[:id])
+      instrument.destroy
+      render json: {message: "success"}
+    end
+
     private
   
     def instrument_params
